@@ -33,7 +33,6 @@ We are looking for product managers, GIS and data visualization experts, visual 
 ### Tech Stack
 
 - Frontend: React with Vite
-- Backend: Express
 
 ### Project Progress
 
@@ -43,40 +42,7 @@ Meetings every Tuesday at [Code for Boston](https://www.codeforboston.org/)
 - March 11, 2025: Overall workplan discussion and sub-team breakouts around data, tech stack, and product design
 - March 18, 2025: Decided on express for a backend, react with vite for a frontend.
 
-## Running the Project locally (with Docker Compose)
-
-1. [Install Docker](https://www.docker.com/)
-2. From the root of this project, run docker-compose:
-
-```bash
-docker-compose up --build
-```
-
-## Running the Project locally (without Docker Compose)
-
-1. ### Run the api server:
-
-- Change to the `api` directory:
-
-```bash
-cd api
-```
-
-- Install dependencies:
-
-```bash
-npm install
-```
-
-- Start the server:
-
-```bash
-npm start
-```
-
-- The api server will be running at [http://localhost:3000](http://localhost:3000)
-
-### Run the React app:
+### Run the React client:
 
 ```bash
 cd client
