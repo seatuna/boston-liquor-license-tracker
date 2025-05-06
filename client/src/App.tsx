@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="App">This is my map App</div>
+      <div className="text-3xl font-bold underline">This is my map App</div>
     </>
   );
 }
