@@ -11,14 +11,42 @@ header {
   background-color: #2e2e2e;
   text-transform: uppercase;
 }
+a:visited .logoImage {
+  opacity: 50%;
+}
 
 header .logoImage {
   height: 32px;
   width: 230px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+header .logoImage:hover {
+  opacity: 90%;
+  height: 32px;
+  width: 230px;
+}
+
+
+.logoImage.clicked {
+  opacity: 0.6;
+}
+header .logoImage:visited {
+  opacity: 60%;
+  height: 32px;
+  width: 230px;
+}
+header a{
+  color: #FAFAFA;
+}
+
+
+header a:visited{
+  color: #999999;
 }
 
 header a:hover {
-  color: #a5a5a5;
+  color: #CCCCCC;
 }
 
 header select {

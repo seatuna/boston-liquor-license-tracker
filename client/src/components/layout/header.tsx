@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/images/logo.svg";
 import "@/components/layout/header.css";
 import { FormattedMessage } from "react-intl";
 import LangSwitcher from "@/i18n/lang-switcher";
@@ -12,26 +12,39 @@ const Spacer = () => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [logoClicked, setLogoClicked] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleLogoClick = () => {
+    setLogoClicked(true);
+  };
 
   return (
     <header className="bg shadow-md fixed top-0 left-0 w-full z-50">
       <div className=" max-w-7xl p-4 sm:p-6 lg:p-8 flex items-center">
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center">
-          <Link to="/" className="text-xl font-bold text-blue-600">
-            <img className="logoImage" src={logo} alt="Logo" />
+          <Link
+            to="/"
+            className="text-xl font-bold text-blue-600"
+            onClick={handleLogoClick}
+          >
+            <img
+              className={`logoImage ${logoClicked ? "clicked" : ""}`}
+              src={logo}
+              alt="Logo"
+            />
           </Link>
           <Spacer />
-          <Link to="/maps" className="hover:text-blue-500">
+          <Link to="/maps">
             <FormattedMessage id="header.maps" />
           </Link>
           <Spacer />
-          <Link to="/database" className="hover:text-blue-500">
+          <Link to="/database">
             <FormattedMessage id="header.database" />
           </Link>
           <Spacer />
-          <Link to="/resources" className="hover:text-blue-500">
+          <Link to="/resources">
             <FormattedMessage id="header.resources" />
           </Link>
         </nav>
