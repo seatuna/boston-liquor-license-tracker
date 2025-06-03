@@ -1,5 +1,4 @@
-header {
-  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
+.site-header {
   font-size: 16px;
   line-height: normal;
   font-weight: 400;
@@ -10,53 +9,25 @@ header {
   color: #fff;
   background-color: #2e2e2e;
   text-transform: uppercase;
-}
-a:visited .logoImage {
-  opacity: 50%;
-}
 
-header .logoImage {
-  height: 32px;
-  width: 230px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-header .logoImage:hover {
-  opacity: 90%;
+.logoImage {
   height: 32px;
   width: 230px;
 }
 
-
-.logoImage.clicked {
-  opacity: 0.6;
-}
-header .logoImage:visited {
-  opacity: 60%;
-  height: 32px;
-  width: 230px;
-}
-header a{
-  color: #FAFAFA;
+a:hover {
+  color: #a5a5a5;
 }
 
+  select {
+    background-color: #2e2e2e;
+    color: #fff;
+    font-size: 16px;
+  }
 
-header a:visited{
-  color: #999999;
-}
-
-header a:hover {
-  color: #CCCCCC;
-}
-
-header select {
-  background-color: #2e2e2e;
-  color: #fff;
-  font-size: 16px;
-}
-
-header .language-icon {
-  width: 20px;
-  height: 20px;
-  color: #fff;
+  .language-icon {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+  }
 }
