@@ -17,6 +17,7 @@ import { Route as DatabaseImport } from './routes/database'
 import { Route as IndexImport } from './routes/index'
 import { Route as MapTestIndexImport } from './routes/map-test/index'
 import { Route as MapTestMaplibreImport } from './routes/map-test/maplibre'
+import { Route as MapTestLeafletImport } from './routes/map-test/leaflet'
 
 // Create/Update Routes
 
@@ -56,6 +57,12 @@ const MapTestMaplibreRoute = MapTestMaplibreImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const MapTestLeafletRoute = MapTestLeafletImport.update({
+  id: '/map-test/leaflet',
+  path: '/map-test/leaflet',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -88,6 +95,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesImport
       parentRoute: typeof rootRoute
     }
+    '/map-test/leaflet': {
+      id: '/map-test/leaflet'
+      path: '/map-test/leaflet'
+      fullPath: '/map-test/leaflet'
+      preLoaderRoute: typeof MapTestLeafletImport
+      parentRoute: typeof rootRoute
+    }
     '/map-test/maplibre': {
       id: '/map-test/maplibre'
       path: '/map-test/maplibre'
@@ -112,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/database': typeof DatabaseRoute
   '/maps': typeof MapsRoute
   '/resources': typeof ResourcesRoute
+  '/map-test/leaflet': typeof MapTestLeafletRoute
   '/map-test/maplibre': typeof MapTestMaplibreRoute
   '/map-test': typeof MapTestIndexRoute
 }
@@ -121,6 +136,7 @@ export interface FileRoutesByTo {
   '/database': typeof DatabaseRoute
   '/maps': typeof MapsRoute
   '/resources': typeof ResourcesRoute
+  '/map-test/leaflet': typeof MapTestLeafletRoute
   '/map-test/maplibre': typeof MapTestMaplibreRoute
   '/map-test': typeof MapTestIndexRoute
 }
@@ -131,6 +147,7 @@ export interface FileRoutesById {
   '/database': typeof DatabaseRoute
   '/maps': typeof MapsRoute
   '/resources': typeof ResourcesRoute
+  '/map-test/leaflet': typeof MapTestLeafletRoute
   '/map-test/maplibre': typeof MapTestMaplibreRoute
   '/map-test/': typeof MapTestIndexRoute
 }
@@ -142,6 +159,7 @@ export interface FileRouteTypes {
     | '/database'
     | '/maps'
     | '/resources'
+    | '/map-test/leaflet'
     | '/map-test/maplibre'
     | '/map-test'
   fileRoutesByTo: FileRoutesByTo
@@ -150,6 +168,7 @@ export interface FileRouteTypes {
     | '/database'
     | '/maps'
     | '/resources'
+    | '/map-test/leaflet'
     | '/map-test/maplibre'
     | '/map-test'
   id:
@@ -158,6 +177,7 @@ export interface FileRouteTypes {
     | '/database'
     | '/maps'
     | '/resources'
+    | '/map-test/leaflet'
     | '/map-test/maplibre'
     | '/map-test/'
   fileRoutesById: FileRoutesById
@@ -168,6 +188,7 @@ export interface RootRouteChildren {
   DatabaseRoute: typeof DatabaseRoute
   MapsRoute: typeof MapsRoute
   ResourcesRoute: typeof ResourcesRoute
+  MapTestLeafletRoute: typeof MapTestLeafletRoute
   MapTestMaplibreRoute: typeof MapTestMaplibreRoute
   MapTestIndexRoute: typeof MapTestIndexRoute
 }
@@ -177,6 +198,7 @@ const rootRouteChildren: RootRouteChildren = {
   DatabaseRoute: DatabaseRoute,
   MapsRoute: MapsRoute,
   ResourcesRoute: ResourcesRoute,
+  MapTestLeafletRoute: MapTestLeafletRoute,
   MapTestMaplibreRoute: MapTestMaplibreRoute,
   MapTestIndexRoute: MapTestIndexRoute,
 }
@@ -195,6 +217,7 @@ export const routeTree = rootRoute
         "/database",
         "/maps",
         "/resources",
+        "/map-test/leaflet",
         "/map-test/maplibre",
         "/map-test/"
       ]
@@ -210,6 +233,9 @@ export const routeTree = rootRoute
     },
     "/resources": {
       "filePath": "resources.tsx"
+    },
+    "/map-test/leaflet": {
+      "filePath": "map-test/leaflet.tsx"
     },
     "/map-test/maplibre": {
       "filePath": "map-test/maplibre.tsx"

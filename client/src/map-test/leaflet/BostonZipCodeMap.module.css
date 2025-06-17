@@ -1,0 +1,15 @@
+.leaflet-container {
+  width: 100%;
+  height: calc(
+    100vh - 104px
+  ); /* calculate height of the screen minus the heading and footer */
+}
+
+.popup-content {
+  border: 2px solid blue;
+}
+
+.popup-content-wrapper {
+  background-color: gray;
+  border-radius: 0px;
+}
